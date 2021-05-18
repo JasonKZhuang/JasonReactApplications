@@ -1,0 +1,21 @@
+body {
+  background-color: whitesmoke;
+}
+
+.myDiv {
+  width: 100%;
+  text-align: center;
+}
+
+button {
+  margin: 2px 2px;
+  font-size: 12px;
+  background-color: green;
+  padding: 5px 20px;
+  color: white;
+  cursor: pointer;
+}
+
+.my-facebook-button-class{
+  width: 200px;
+}
