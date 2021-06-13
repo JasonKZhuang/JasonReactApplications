@@ -7,7 +7,6 @@ function TaskTracker() {
         <div>
             <Header title="Hello, This is a Title "></Header>
             <Header title={2}></Header>
-            
         </div>
     )
 }

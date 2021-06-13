@@ -22,6 +22,7 @@ import ApplyProgressBar from './components/UsingTimer/progressBar/ApplyProgressB
 import ClassExample from './components/BasicComponents/ClassExample';
 import StyleInCss from './components/WaysToStyle/StyleInCss';
 import TaskTracker from './components/Examples/TaskTracker/TaskTracker';
+import ES6Example from './components/ES6_basic/ES6Example';
 
 
 /**
@@ -48,62 +49,47 @@ class App extends Component {
     return (
       <div className="App">
         <TodoManagement />
-        <br />
         <hr />
         <FirstComponent></FirstComponent>
         <FirstComponentInside></FirstComponentInside>
         <SecondComponent></SecondComponent>
         <FunctionComponent></FunctionComponent>
-        <br />
         <hr />
         <ClassExample></ClassExample>
-        <br />
         <hr />
         <Counter />
-        <br />
         <hr />
         <JSXFirstExample />
-        <br />
         <hr />
         <BasicRouting />
         <br />
         <hr />
         <NestedRouting />
-        <br />
         <hr />
         <URLParameters />
-        <br />
         <hr />
         <AuthenticationExample />
-        <br />
         <hr />
         <SidebarExample />
         <br />
         <hr />
         <UsingLink/>
-        <br />
         <hr />
         <ParentComponent />
-        <br />
         <hr />
         {/* <GoogleLoginPlug/> */}
-        <br />
         <hr />
         {/* <FacebookLoginPlug/> */}
-        <br />
         <hr />
         <StopWatch/>
         <CutdownTimer/>
         <ApplyProgressBar/>
-        <br />
         <hr />
         <StyleInCss></StyleInCss>
-        <br />
         <hr />
         <TaskTracker></TaskTracker>
-        <br />
         <hr />
-        <br />
+        <ES6Example></ES6Example>
         <hr />
         <br />
         <hr />

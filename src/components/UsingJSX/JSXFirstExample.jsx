@@ -6,32 +6,51 @@
 
 import React, { Component } from "react";
 
-const name = "This is an example of using JSX";
+const title = "There are examples of using JSX";
+const aString = "This is a String variable";
+const template = <p>Using a Template with  paragraph element in JSX</p>
+const age = 40;
 
 const element = (
   <div>
-    <h1 className="greeting">Hello, {name}</h1>
-    <h2>It is {new Date().toLocaleTimeString()}.</h2>
+    <h2>{title}</h2>
+    <h3>Using a String function UpperCase, {aString.toUpperCase()}</h3>
+    <h3> Using a Date function, {new Date().toLocaleTimeString()}.</h3>
+    <h3> {template}</h3>
+    <h3> Using a Number, My Age is {age}.</h3>
   </div>
 );
 
-const user = {
-  firtName: "Jason",
-  secondName: "Zhuang",
-};
+const user =
+{
+  name: "Jason",
+  age: 30,
+  location: "Sydney"
 
-function formatName(user) {
-  return user.firstName + " " + user.lastName;
-}
+};
 
 //you can use JSX inside of if statements and for loops,
 //assign it to variables, accept it as arguments, and return it from functions:
-function getGreeting(user) {
+function getUserName(user) {
   if (user) {
-    return <h1>Hello, {formatName(user)}!</h1>;
+    return <p>Hello, {user.name}!</p>;
+  } else {
+    return <p>Hello, Stranger.</p>;
   }
-  return <h1>Hello, Stranger.</h1>;
 }
+
+function getUserLocation(location) {
+  if (location) {
+    return <p>The user Location is {location}</p>;
+  } 
+}
+
+function getUserProfessional(professional) {
+  if (professional) {
+    return <p>The user's professional is {professional}</p>;
+  } 
+}
+
 
 export class JSXFirstExample extends Component {
   constructor(props) {
@@ -46,15 +65,12 @@ export class JSXFirstExample extends Component {
     return (
       <div>
         {element}
-        <h4>
-          You can put any valid JavaScript expression inside the curly braces in
-          JSX.
-        </h4>
+        <h3>
+          You can put any valid JavaScript expression inside the curly braces in JSX.
+        </h3>
         <span>2+2 = {2 + 2}</span>
         <br />
-        <span>user.firstName = {user.firtName}</span>
-        <br />
-        <span>formatName(user) = {formatName({ user })}</span>
+        <span>user.name = {user.name}</span>
         <br />
         <span>
           Since JSX is closer to JavaScript than to HTML, React DOM uses
@@ -62,7 +78,17 @@ export class JSXFirstExample extends Component {
           For example, class becomes className in JSX, and tabindex becomes
           tabIndex.
         </span>
-        {getGreeting({ user })}
+        <h3>Conditional Rendering Examples - if statement</h3>
+        {getUserName(user)}
+        {getUserLocation(user.location)}
+        Nothing will return is the property of the user object doesn't exist
+        {getUserProfessional(user.professional)}
+                
+        <h3>Conditional Rendering Examples - Ternary</h3>
+        Using Questions mark ? {user.name? user.name:"Anonymous"}
+        
+        <h3>Conditional Rendering Examples - Logical and operator</h3>
+        User.age larger than 20, the tag will appear:{(user.age && user.age >= 20) && <span>{user.age}</span>}
       </div>
     );
   }
