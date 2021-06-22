@@ -1,0 +1,164 @@
+let message: string = "Hello World";
+console.log(message);
+
+//Compile and Execute a TypeScript Program
+//Right-click the TypeScript file under the Working Files option in VS Code’s Explore Pane.
+//Select Open in Command Prompt option.
+//To compile the file use the following command on the terminal window.
+//tsc Test.ts
+//The file is compiled to Test.js. To run the program written, type the following in the terminal.
+//node Test.js
+
+// − Multiple files can be compiled at once.
+//tsc file1.ts, file2.ts, file3.ts
+
+//Whitespace and Line Breaks
+//TypeScript ignores spaces, tabs, and newlines that appear in programs.
+//You can use spaces, tabs, and newlines freely in your program
+//and you are free to format and indent your programs
+//in a neat and consistent way that makes the code easy to read and understand.
+
+//TypeScript is Case-sensitive
+//This means that TypeScript differentiates between uppercase and lowercase characters.
+
+//Semicolons are optional;;;;
+//Each line of instruction is called a statement. Semicolons are optional in TypeScript.
+
+//Comments in TypeScript
+//Single-line comments ( // )
+//Multi-line comments (/* */)
+
+//***TypeScript and Object Orientation****
+//TypeScript supports object oriented components as follows:
+
+//Object − An object is a real time representation of any entity.
+//According to Grady Brooch, every object must have three features −
+//========> 1. State − described by the attributes of an object
+//========> 2. Behavior − describes how the object will act
+//========> 3. Identity − a unique value that distinguishes an object from a set of similar such objects.
+
+//Class − A class in terms of OOP is a blueprint for creating objects.
+//A class encapsulates data for the object.
+
+//Method − Methods facilitate communication between objects.
+
+//example of OO
+class Greeting {
+  greet(): void {
+    console.log("Hello World!!!");
+  }
+}
+var obj = new Greeting();
+obj.greet();
+
+//The above example defines a class Greeting. 
+//The class has a method greet (). 
+//The method prints the string “Hello World” on the terminal. 
+//The new keyword creates an object of the class (obj). 
+//The object invokes the method greet ().
+
+//=====================Data Types=============================//
+//=========https://segmentfault.com/a/1190000022876390========//
+let isDone: boolean = false;
+// ES5：var isDone = false;
+
+let myCount: number = 10;
+// ES5：var count = 10;
+
+let myName: string = "Semliker";
+// ES5：var name = 'Semlinker';
+
+let myList1: number[] = [1, 2, 3];
+// ES5：var list = [1,2,3];
+
+let myList2: Array<number> = [1, 2, 3]; // Array<number>泛型语法
+// ES5：var list = [1,2,3];
+
+let myList3: Array<string> = ["A", "B", "C"]; // Array<string>泛型语法
+
+
+enum Direction {
+  NORTH,
+  SOUTH,
+  EAST,
+  WEST,
+}
+
+let myDirection: Direction = Direction.NORTH;
+
+enum Direction2 {
+  NORTH = 3,//设置 NORTH 的初始值
+  SOUTH,
+  EAST,
+  WEST,
+}
+
+enum DirectionString {
+  NORTH = "NORTH",
+  SOUTH = "SOUTH",
+  EAST = "EAST",
+  WEST = "WEST",
+}
+
+enum HeterogeneousEnum {
+  A,
+  B,
+  C = "C",
+  D = "D",
+  E = 8,
+  F,
+}
+
+console.log(HeterogeneousEnum.A) //输出：0
+console.log(HeterogeneousEnum[0]) // 输出：A
+
+
+//Any 类型
+let notSure: any = 666;
+notSure = "Jason";
+console.log(notSure);
+notSure = false;
+console.log(notSure);
+
+//Tuple 类型 使用元组 元组是 TypeScript 中特有的类型，其工作方式类似于数组
+//每个属性都有一个关联的类型。使用元组时，必须提供每个属性的值
+let myTupleType: [string, boolean];
+myTupleType = ["Jason", true];
+console.log(myTupleType[0]); // Jason
+console.log(myTupleType[1]); // true
+//类型不匹配，会报编译错误
+//myTupleType = [true, "Jason"];
+
+//Void 类型 - 某种程度上来说，void 类型像是与 any 类型相反，它表示没有任何类型
+// 声明函数返回值为void
+function myFunction(): void 
+{
+  console.log("This is my warning message");
+}
+myFunction();
+
+//Never 类型 - never 类型表示的是那些永不存在的值的类型
+//例如，never 类型是那些总是会抛出异常或根本就不会有返回值的函数表达式或箭头函数表达式的返回值类型。
+// 返回never的函数必须存在无法达到的终点
+// function error(message: string): never {
+//   throw new Error(message);
+// }
+
+// function infiniteLoop(): never {
+//   while (true) {}
+// }
+
+//TypeScript 断言
+//有时候你会遇到这样的情况，你会比 TypeScript 更了解某个值的详细信息。
+//通常这会发生在你清楚地知道一个实体具有比它现有类型更确切的类型。
+//通过类型断言这种方式可以告诉编译器，“相信我，我知道自己在干什么”。
+//类型断言好比其他语言里的类型转换，但是不进行特殊的数据检查和解构。
+//它没有运行时的影响，只是在编译阶段起作用。
+
+//类型断言有两种形式：
+//“尖括号” 语法
+let someValue1: any = "I know this variable is a string";
+let strLength1: number = (<string>someValue1).length;
+// as 语法
+let someValue2: any = "this is a string";
+let strLength2: number = (someValue2 as string).length;

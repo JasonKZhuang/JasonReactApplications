@@ -17,13 +17,3 @@ const petName = getPetName();
 
 console.log("petName", petName);
 
-//Arrow Functions
-// ES5
-let x = function (x, y) {
-    return x * y;
-}
-
-// ES6
-const z = (x, y) => x * y;
-
-const A = (x, y) => { return x * y };

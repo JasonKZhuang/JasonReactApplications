@@ -1,4 +1,4 @@
-
+/* eslint-disable no-restricted-globals */
 
 //============Arrow functions, the basics=======================================//
 //https://javascript.info/arrow-functions-basics
@@ -15,12 +15,12 @@ let sum = function(a, b) {
   return a + b;
 };
 */
-console.log("The arrow function (a,b)=>a+b is "+ afSum(1, 2) ); // 3
+console.log("The arrow function (a,b)=>a+b is " + afSum(1, 2)); // 3
 
 //If we have only one argument n, then parentheses around parameters can be omitted
 let afDouble = n => n * 2;
 // roughly the same as: let double = function(n) { return n * 2 }
-console.log("The arrow function with only one parameter n => n * 2 is " + afDouble(3) ); 
+console.log("The arrow function with only one parameter n => n * 2 is " + afDouble(3));
 
 //If there are no arguments, parentheses will be empty (but they should be present):
 let sayHi = () => alert("Hello!");
@@ -34,16 +34,57 @@ let welcome = (age < 18) ?
 welcome();
 
 //Multiline arrow functions
-let mafSum = (a, b) => {  // the curly brace opens a multiline function
-    let result = a + b;
-    return result; // if we use curly braces, then we need an explicit "return"
+let fSum = (a, b) => {  // the curly brace opens a multiline function
+  let result = a + b;
+  return result; // if we use curly braces, then we need an explicit "return"
 };
-console.log( sum(1, 2) ); // 3
+console.log(fSum(1, 2)); // 3
 //===================================================================//
+
 
 //============Function expressions=======================================//
 //https://javascript.info/function-basics
-//===================================================================//
+//There is another syntax for creating a function that is called a Function Expression.
+let fShowMessage = function (parameter1, parameter2, ...parameterN) {
+  // ...body...
+  console.log("===>This is function body.");
+};
+fShowMessage();
+//Please note that this line does not run the function, because there are no parentheses after fShowMessage.
+console.log(fShowMessage); // shows the function code
+//Here, the function is created and assigned to the variable explicitly, like any other value. 
+//No matter how the function is defined, it’s just a value stored in the variable fShowMessage.
+//---------------------------------------------------------------------------//
+
+
+//============Callback functions=======================================//
+function ask(question, yes, no) {
+  if (confirm(question)) {
+    yes();
+  } else {
+    no();
+  }
+}
+
+function showOk() {
+  alert("You agreed.");
+}
+
+function showCancel() {
+  alert("You canceled the execution.");
+}
+
+// usage: functions showOk, showCancel are passed as arguments to ask
+ask("Do you agree?", showOk, showCancel);
+//The arguments showOk and showCancel of ask are called callback functions or just callbacks.
+
+ask(
+  "Do you agree?",
+  function() { alert("You agreed."); },
+  function() { alert("You canceled the execution."); }
+);
+
+//---------------------------------------------------------------------------//
 
 //============Functions=======================================//
 //https://javascript.info/function-basics
@@ -98,7 +139,7 @@ alert(`You are ${promptAge} years old!`); // You are 100 years old!
 // shows a message and waits for the user to press “OK” or “Cancel”. It returns true for OK and false for Cancel/Esc.
 //The syntax:result = confirm(question);
 let isBoss = confirm("Are you the boss?");
-alert( isBoss ); // true if OK is pressed
+alert(isBoss); // true if OK is pressed
 //==========================================================================//
 
 //============Data Types=======================================//
@@ -128,23 +169,23 @@ console.log("Reassign the string variable to a number " + dyVar);
 let dyMyNumber = 123;
 dyMyNumber = 123.456;
 //infinity
-console.log("Infinity",1/0);
+console.log("Infinity", 1 / 0);
 
 //NaN
-console.log("not a number"/2);
+console.log("not a number" / 2);
 
 //BigInt Data Type
 //the "n" at the end means it's a BigInt
 const dyBigInt = 12345678901234567890n;
 
 //Backticks:`Hello`
-console.log("Using Backticks with variable "+`Hellow, ${dyVar}`);
-console.log("Using Backticks with calculation 1+2= "+`Hello, ${1+2}`);
+console.log("Using Backticks with variable " + `Hellow, ${dyVar}`);
+console.log("Using Backticks with calculation 1+2= " + `Hello, ${1 + 2}`);
 
 //Boolean Data Type
 let dyFieldChecked = true;
 let dyIsFinished = false;
-let dyMybool = (4>1);
+let dyMybool = (4 > 1);
 console.log(dyFieldChecked);
 console.log(dyIsFinished);
 console.log(dyMybool);
@@ -159,15 +200,15 @@ let dyUnDefinedValue;
 console.log(dyUnDefinedValue);
 
 //The typeof operator
-console.log(typeof(undefined)) // "undefined"
-console.log(typeof(0)) // "number"
+console.log(typeof (undefined)) // "undefined"
+console.log(typeof (0)) // "number"
 console.log(typeof 10n) // "bigint"
 console.log(typeof true) // "boolean"
 console.log(typeof "foo") // "string"
 console.log(typeof Symbol("id")) // "symbol"
 console.log(typeof Math) // "object"  (1)
-console.log(typeof null )// "object"  (2)
-console.log(typeof alert )// "function"  (3)
+console.log(typeof null)// "object"  (2)
+console.log(typeof alert)// "function"  (3)
 //==========================================================================//
 
 
@@ -178,8 +219,8 @@ const myBirthday = "01.01.2000";
 //myBirthday = "01.01.1999";//Uncaught TypeError: Assignment to constant variable.
 
 //uppercase constants
-const COLOR_RED="#F00";
-const COLOR_GREEN="#0F0";
+const COLOR_RED = "#F00";
+const COLOR_GREEN = "#0F0";
 let myColor = COLOR_RED;
 //console.log(myColor);
 //==========================================================================//
@@ -191,7 +232,7 @@ let message;
 message = "Hello Message";
 //console.log(message);
 
-let userName = "Jason", age= 30, userMesg="This is Jason";
+let userName = "Jason", userAge = 30, userMesg = "This is Jason";
 //console.log(userName);
 //console.log(age);
 message = userMesg;
@@ -203,7 +244,7 @@ message = userMesg;
 //variable naming
 let varName = "camelCase";
 let varNAME = "camelCaseUppercase";
-let var123  = "characterWithNumber";
+let var123 = "characterWithNumber";
 let $ = "Dollar sign is ok it is weird";
 let _ = "underscore is ok but it is rare"
 //==========================================================================//
