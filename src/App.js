@@ -23,7 +23,7 @@ import ClassExample from './components/BasicComponents/ClassExample';
 import StyleInCss from './components/WaysToStyle/StyleInCss';
 import TaskTracker from './components/Examples/TaskTracker/TaskTracker';
 import ES6Example from './components/ES6_basic/ES6Example';
-
+import Header from './components/HeaderComponents/Header';
 
 /**
    * The Component Lifecycle
@@ -39,7 +39,7 @@ class App extends Component {
   constructor() {
     super(); //Error 1// it is necessary for using 'this'
     this.state = {
-      
+
     };
     this.childReference = React.createRef();
   };
@@ -73,7 +73,7 @@ class App extends Component {
         <SidebarExample />
         <br />
         <hr />
-        <UsingLink/>
+        <UsingLink />
         <hr />
         <ParentComponent />
         <hr />
@@ -81,9 +81,9 @@ class App extends Component {
         <hr />
         {/* <FacebookLoginPlug/> */}
         <hr />
-        <StopWatch/>
-        <CutdownTimer/>
-        <ApplyProgressBar/>
+        <StopWatch />
+        <CutdownTimer />
+        <ApplyProgressBar />
         <hr />
         <StyleInCss></StyleInCss>
         <hr />
@@ -91,9 +91,10 @@ class App extends Component {
         <hr />
         <ES6Example></ES6Example>
         <hr />
+        <Header></Header>
         <br />
         <hr />
-      </div>
+      </div >
     );
   }
 

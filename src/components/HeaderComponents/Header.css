@@ -1,0 +1,28 @@
+:root {
+ --header-color: white; 
+ --header-bg-color: black;
+ --header-font-size: 3pt;
+}
+
+section {
+ /* arrangement */
+ position: fixed;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 70px;
+ max-height: 100px;
+ padding: 10px 24px;
+
+ /* color factors  */
+ background-color: var(--header-bg-color);
+ color: var(--header-color);
+
+ /* font factors */
+ font-size: 14px;
+
+}
+section > div{
+ width: 100%;
+ height: auto;
+}
