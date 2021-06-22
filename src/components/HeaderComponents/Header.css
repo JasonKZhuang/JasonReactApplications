@@ -1,16 +1,21 @@
 :root {
+ --header-height:70px;
  --header-color: white; 
  --header-bg-color: black;
- --header-font-size: 3pt;
+ --header-font-size: 1.5vw;
+
+
 }
 
-section {
+#section-header {
  /* arrangement */
  position: fixed;
  top: 0;
  left: 0;
+ 
+ display: flex;
  width: 100%;
- height: 70px;
+ height: var(--header-height);
  max-height: 100px;
  padding: 10px 24px;
 
@@ -19,10 +24,58 @@ section {
  color: var(--header-color);
 
  /* font factors */
- font-size: 14px;
+ font-size: var(--header-font-size);
 
 }
+
 section > div{
- width: 100%;
- height: auto;
+ height: 100%;
+ display: flex;
+ margin: 0 0 0 5px;
+ align-items: center;/* 垂直居中 */
 }
+
+#section-header-logo{
+ /* background-color: red; */
+ width: 20%;
+ justify-content: center;/* 水平居中 */
+}
+
+#section-header-navbar{
+ /* background-color: rgb(196, 199, 208); */
+ width: 60%;
+ justify-content: flex-end;/* 水平靠右 */
+}
+
+#section-header-action{
+ /* background-color: rgb(145, 213, 103); */
+ width: 20%;
+ justify-content: center;/* 水平居中 */
+}
+ 
+#section-header-navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+ 
+#section-header-navbar li {
+    display: inline-block;
+    height: 100%;
+    z-index: 1;
+    vertical-align:middle;
+}
+
+#section-header-navbar a {
+  float: left;
+  text-align: center;
+  padding: 8px;
+  text-decoration: none;
+  font-size: 17px;
+
+}
+
+#section-header-navbar a:hover {
+  background-color: rgb(175, 102, 102);
+}
+

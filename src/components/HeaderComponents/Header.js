@@ -1,11 +1,13 @@
+
+/**
 //1.The main elements of a website header usually include:
-//Logo or brand identifier
-//Large Screen no larger than 320px wide, and 70–100px high. 
+//Logo or brand identifier -Large Screen no larger than 320px wide, and 70–100px high.
 //Most mobile devices are typically between 320px and 500px wide,
 
 //Navigational links and menus
 //Hidden Navigation - Hidden navigation is when navigational links appear on click or hover.
 //A popular hidden navigation solution is the hamburger button or collapsed menu icon.It consists of horizontal lines that represent the menu. Another popular hidden navigation method is the use of drop - down menus.
+
 //Social Media buttons
 //Contact information
 //Language options
@@ -33,42 +35,43 @@
 
 //4. Goog Examples Header Design:
 //https://awakeboards.com/
-
+ * 
+ */
 import React, { useState, useEffect } from 'react';
 import './Header.css'
-function Header() {
- const [headerUpperVisible, setHeaderUpperVisible] = useState(false);
- const [headerMiddleVisible, setHeaderMiddleVisible] = useState(false);
- const [headerLowerVisible, setHeaderLowerVisible] = useState(false);
+import logo from '../../assets/images/logo192.png';
+import NavMenu from './NavMenu';
+
+
+function Header(props) {
+ const [headerVisible, setHeaderVisible] = useState(false);
+ let webSiteName = props.webSiteName ? props.webSiteName : "New Web Site";
 
  useEffect(() => {
-  setHeaderMiddleVisible(true);
+  setHeaderVisible(true);
  }, []);
 
 
  return (
-  <section id="header">
+  <>
    {
-    headerUpperVisible &&
-    <div id="header-upper">
-     Hello header upper
-    </div>
-   }
-   {
-    headerMiddleVisible &&
-    <div id="header-middle">
-     Hello header middle
-    </div>
-   }
+    headerVisible &&
+    <section id="section-header">
+     <div id="section-header-logo">
+      <a id="header-logo" href="/">
+       <img src={logo} width="30" height="30" alt={webSiteName} />
+      </a>
+     </div>
+     <div id="section-header-navbar">
+      <NavMenu />
+     </div>
+     <div id="section-header-action">
 
-   {
-    headerLowerVisible &&
-    <div id="header-lower">
-     Hello header lower
-    </div>
+     </div>
+    </section>
    }
+  </>
 
-  </section>
 
  )
 }
