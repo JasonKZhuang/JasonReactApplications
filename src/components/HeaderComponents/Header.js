@@ -54,7 +54,7 @@ function Header(props) {
         setHeaderVisible(true);
     }, []);
 
-    const handleSideBar = () =>{
+    const handleSideBar = () => {
         console.log(sideBarVisible);
         setSideBarVisible(!sideBarVisible)
     }
@@ -71,9 +71,9 @@ function Header(props) {
                     </div>
                     <div id="section-header-navbar">
                         <NavMenu />
-                        <div id="threeBarIcon" style={{ color: '#fff', cursor: 'pointer' }}>
-                            <AiOutlineBars size={24} onClick={handleSideBar} />
-                        </div>
+                        <button id="threeBarIcon" >
+                            <AiOutlineBars size={24} onClick={handleSideBar}/>
+                        </button>
                     </div>
                     <div id="section-header-action">
                         <Search />
@@ -83,7 +83,7 @@ function Header(props) {
             {
                 sideBarVisible &&
                 <section id="section-sidebar">
-                        sdfs
+                    sdfs
                 </section>
             }
         </>

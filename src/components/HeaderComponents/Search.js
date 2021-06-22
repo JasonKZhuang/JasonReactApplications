@@ -5,9 +5,9 @@ function Search() {
     return (
         <div>
             <input type="text" placeholder="Search"></input>
-            <div style={{ color: '#fff', cursor:'pointer'}}>
-                <AiOutlineSearch size={24} />
-            </div>
+            <button>
+                <AiOutlineSearch size={24}/>
+            </button>
         </div>
     )
 }
