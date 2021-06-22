@@ -22,7 +22,8 @@ import ApplyProgressBar from './components/UsingTimer/progressBar/ApplyProgressB
 import ClassExample from './components/BasicComponents/ClassExample';
 import StyleInCss from './components/WaysToStyle/StyleInCss';
 import TaskTracker from './components/Examples/TaskTracker/TaskTracker';
-import ES6Example from './components/ES6_basic/ES6Example';
+import ES6Example from './components/ES6Features/ES6Example';
+import ES6ArrowFunction from './components/ES6Features/ES6ArrowFunction';
 import Header from './components/HeaderComponents/Header';
 
 /**
@@ -39,7 +40,7 @@ class App extends Component {
   constructor() {
     super(); //Error 1// it is necessary for using 'this'
     this.state = {
-
+      
     };
     this.childReference = React.createRef();
   };
@@ -73,7 +74,7 @@ class App extends Component {
         <SidebarExample />
         <br />
         <hr />
-        <UsingLink />
+        <UsingLink/>
         <hr />
         <ParentComponent />
         <hr />
@@ -81,20 +82,24 @@ class App extends Component {
         <hr />
         {/* <FacebookLoginPlug/> */}
         <hr />
-        <StopWatch />
-        <CutdownTimer />
-        <ApplyProgressBar />
+        <StopWatch/>
+        <CutdownTimer/>
+        <ApplyProgressBar/>
         <hr />
         <StyleInCss></StyleInCss>
         <hr />
         <TaskTracker></TaskTracker>
+        
         <hr />
         <ES6Example></ES6Example>
-        <hr />
+        <br/>
+        <ES6ArrowFunction/>
+        <br/>
         <Header></Header>
+        <hr />
         <br />
         <hr />
-      </div >
+      </div>
     );
   }
 

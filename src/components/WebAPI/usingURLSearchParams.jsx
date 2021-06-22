@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-expressions */
 //URLSearchParams() 构造器创建并返回一个新的URLSearchParams 对象。 开头的'?' 字符会被忽略。
 import React, { useState, useEffect } from 'react';
 
@@ -56,7 +57,6 @@ function usingURLSearchParams(props) {
                   </button>
         </div>
     )
-}
 }
 
 export default usingURLSearchParams

@@ -35,45 +35,62 @@
 
 //4. Goog Examples Header Design:
 //https://awakeboards.com/
- * 
  */
 import React, { useState, useEffect } from 'react';
 import './Header.css'
 import logo from '../../assets/images/logo192.png';
 import NavMenu from './NavMenu';
+import Search from './Search';
+import { AiOutlineBars } from "react-icons/ai";
+
 
 
 function Header(props) {
- const [headerVisible, setHeaderVisible] = useState(false);
- let webSiteName = props.webSiteName ? props.webSiteName : "New Web Site";
+    const [headerVisible, setHeaderVisible] = useState(false);
+    const [sideBarVisible, setSideBarVisible] = useState(false);
+    let webSiteName = props.webSiteName ? props.webSiteName : "New Web Site";
 
- useEffect(() => {
-  setHeaderVisible(true);
- }, []);
+    useEffect(() => {
+        setHeaderVisible(true);
+    }, []);
+
+    const handleSideBar = () =>{
+        console.log(sideBarVisible);
+        setSideBarVisible(!sideBarVisible)
+    }
+
+    return (
+        <>
+            {
+                headerVisible &&
+                <section id="section-header">
+                    <div id="section-header-logo">
+                        <a id="header-logo" href="/">
+                            <img src={logo} width="30" height="30" alt={webSiteName} />
+                        </a>
+                    </div>
+                    <div id="section-header-navbar">
+                        <NavMenu />
+                        <div id="threeBarIcon" style={{ color: '#fff', cursor: 'pointer' }}>
+                            <AiOutlineBars size={24} onClick={handleSideBar} />
+                        </div>
+                    </div>
+                    <div id="section-header-action">
+                        <Search />
+                    </div>
+                </section>
+            }
+            {
+                sideBarVisible &&
+                <section id="section-sidebar">
+                        sdfs
+                </section>
+            }
+        </>
 
 
- return (
-  <>
-   {
-    headerVisible &&
-    <section id="section-header">
-     <div id="section-header-logo">
-      <a id="header-logo" href="/">
-       <img src={logo} width="30" height="30" alt={webSiteName} />
-      </a>
-     </div>
-     <div id="section-header-navbar">
-      <NavMenu />
-     </div>
-     <div id="section-header-action">
-
-     </div>
-    </section>
-   }
-  </>
-
-
- )
+    )
 }
 
 export default Header
+
