@@ -272,7 +272,7 @@ let message;
 message = "Hello Message";
 //console.log(message);
 
-let userName = "Jason", userAge = 30, userMesg = "This is Jason";
+let userName2 = "Jason", userAge = 30, userMesg = "This is Jason";
 //console.log(userName);
 //console.log(age);
 message = userMesg;
