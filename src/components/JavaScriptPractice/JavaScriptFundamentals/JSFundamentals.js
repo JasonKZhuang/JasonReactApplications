@@ -4,8 +4,9 @@
 //https://javascript.info/arrow-functions-basics
 // Arrow functions are handy for one-liners. They come in two flavors:
 // Without curly braces: (...args) => expression – the right side is an expression: the function evaluates it and returns the result.
-// With    curly braces: (...args) => { body } – brackets allow us to write multiple statements inside the function, but we need an explicit return to return something.
-//syntax: let func = (arg1, arg2, ..., argN) => expression
+// With    curly braces: (...args) => { body } – brackets allow us to write multiple statements inside the function, 
+// ,but we need an explicit return to return something.
+// syntax: let func = (arg1, arg2, ..., argN) => expression
 // let func = function(arg1, arg2, ..., argN) {
 //     return expression;
 // };
@@ -23,11 +24,11 @@ let afDouble = n => n * 2;
 console.log("The arrow function with only one parameter n => n * 2 is " + afDouble(3));
 
 //If there are no arguments, parentheses will be empty (but they should be present):
-let sayHi = () => alert("Hello!");
+let sayHi = () => console.log("Hello!");
 sayHi();
 
 //dynamically create a function
-let age = prompt("What is your age?", 18);
+let age = window.prompt("What is your age?", 18);
 let welcome = (age < 18) ?
   () => console.log('Hello, the age is less than 18') :
   () => alert("Greetings!, the age is more than 18");
@@ -80,18 +81,57 @@ ask("Do you agree?", showOk, showCancel);
 
 ask(
   "Do you agree?",
-  function() { alert("You agreed."); },
-  function() { alert("You canceled the execution."); }
+  function () { alert("You agreed."); },
+  function () { alert("You canceled the execution."); }
 );
 
 //---------------------------------------------------------------------------//
 
 //============Functions=======================================//
 //https://javascript.info/function-basics
+let userName = 'John';
+function showMessage(parameter1, parameter2 = "the default value") {
+  userName = "Bob"; // (1) changed the outer variable
+  let message = "Hello, I'm JavaScript!  " + userName; // local variable + Outer variables  
+  console.log(message);
+}
+showMessage();
 //===================================================================//
 
 //============The "switch" statement=======================================//
 //https://javascript.info/switch
+let a = 2 + 2;
+switch (a) {
+  case 3:
+    console.log('Too small');
+    break;
+  case 4:
+    console.log('Exactly!');
+    break;
+  case 5:
+    console.log('Too big');
+    break;
+  default:
+    console.log("I don't know such values");
+}
+
+let arg = prompt("Enter a value?");
+switch (arg) {
+  case '0':
+  case '1':
+    alert('One or zero');
+    break;
+
+  case '2':
+    alert('Two');
+    break;
+
+  case 3:
+    alert('Never executes!');
+    break;
+  default:
+    alert('An unknown value');
+}
 //===================================================================//
 
 //============Loops: while and for=======================================//

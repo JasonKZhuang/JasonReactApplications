@@ -1,4 +1,4 @@
-//embrace the features of 
+//embrace the features of
 //Object Orientation, 
 //Strong type checking : TypeScript: A Static Type Checker
 //Compile-time error checks prevents 
@@ -55,7 +55,9 @@
 //$ tsc helloworld.ts
 //# helloworld.ts => helloworld.js
 //node example.js
+
 //or
+
 //$npm i ts-node
 //$ts-node example.ts 
 //==================================================//
