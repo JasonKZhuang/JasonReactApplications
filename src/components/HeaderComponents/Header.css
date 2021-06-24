@@ -11,17 +11,14 @@
   position: fixed;
   top: 0;
   left: 0;
-
   display: flex;
   width: 100%;
   height: var(--header-height);
   max-height: 100px;
   padding: 10px 24px;
-
   /* color factors  */
   background-color: var(--header-bg-color);
   color: var(--header-color);
-
   /* font factors */
   font-size: var(--header-font-size);
   font-family: Arial, Helvetica, sans-serif;
@@ -31,13 +28,15 @@ section div {
   height: 100%;
   display: flex;
   margin: 0 0 0 5px;
-  align-items: center; /* 垂直居中 */
+  align-items: center;
+  /* 垂直居中 */
 }
 
 #section-header-logo {
   /* background-color: red; */
   flex: 20%;
-  justify-content: center; /* 水平居中 */
+  justify-content: center;
+  /* 水平居中 */
 }
 
 #section-header-navbar {
@@ -49,7 +48,8 @@ section div {
 #section-header-action {
   /* background-color: rgb(145, 213, 103); */
   flex: 20%;
-  justify-content: flex-end; /* 水平靠右 */
+  justify-content: flex-end;
+  /* 水平靠右 */
 }
 
 #section-header-navbar ul {
@@ -94,7 +94,7 @@ section div {
   color: black;
 }
 
-#section-sidebar{
+#section-sidebar {
   display: flex;
   position: absolute;
   left: 0;
@@ -104,10 +104,8 @@ section div {
   background: rgb(156, 16, 16);
 }
 
-
 @media screen and (max-width: 850px) {
-  #section-header-navbar a,
-  #section-header-action input,{
+  #section-header-navbar a, #section-header-action input {
     font-size: 10px;
   }
 }
@@ -116,18 +114,16 @@ section div {
   #section-header-navbar {
     justify-content: start;
   }
-  
   #section-header-navbar #threeBarIcon {
     display: flex;
   }
-
   #section-header-navbar ul {
     display: none;
   }
 }
 
 @media screen and (min-width: 719px) {
-  #section-sidebar{
+  #section-sidebar {
     display: none;
   }
 }

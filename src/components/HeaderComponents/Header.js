@@ -83,8 +83,13 @@ function Header(props) {
             {
                 sideBarVisible &&
                 <section id="section-sidebar">
-                    sdfs
+                    Home
+                    Product
+                    Service
+                    Company
+                    ContactUs
                 </section>
+
             }
         </>
 
