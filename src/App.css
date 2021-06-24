@@ -33,6 +33,14 @@ button:hover {
     text-align: center;
 }
 
+.section-header-navbar button{
+    display: none;
+
+}
+
+.section-sider{
+    display: none;
+}
 /* .Navbar_P {
     background-color: #080d3d;
 } */
