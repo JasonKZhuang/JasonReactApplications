@@ -51,10 +51,10 @@ class Greeting {
 var obj = new Greeting();
 obj.greet();
 
-//The above example defines a class Greeting. 
-//The class has a method greet (). 
-//The method prints the string “Hello World” on the terminal. 
-//The new keyword creates an object of the class (obj). 
+//The above example defines a class Greeting.
+//The class has a method greet ().
+//The method prints the string “Hello World” on the terminal.
+//The new keyword creates an object of the class (obj).
 //The object invokes the method greet ().
 
 //=====================Data Types=============================//
@@ -76,7 +76,6 @@ let myList2: Array<number> = [1, 2, 3]; // Array<number>泛型语法
 
 let myList3: Array<string> = ["A", "B", "C"]; // Array<string>泛型语法
 
-
 enum Direction {
   NORTH,
   SOUTH,
@@ -87,7 +86,7 @@ enum Direction {
 let myDirection: Direction = Direction.NORTH;
 
 enum Direction2 {
-  NORTH = 3,//设置 NORTH 的初始值
+  NORTH = 3, //设置 NORTH 的初始值
   SOUTH,
   EAST,
   WEST,
@@ -109,9 +108,8 @@ enum HeterogeneousEnum {
   F,
 }
 
-console.log(HeterogeneousEnum.A) //输出：0
-console.log(HeterogeneousEnum[0]) // 输出：A
-
+console.log(HeterogeneousEnum.A); //输出：0
+console.log(HeterogeneousEnum[0]); // 输出：A
 
 //Any 类型
 let notSure: any = 666;
@@ -131,8 +129,7 @@ console.log(myTupleType[1]); // true
 
 //Void 类型 - 某种程度上来说，void 类型像是与 any 类型相反，它表示没有任何类型
 // 声明函数返回值为void
-function myFunction(): void 
-{
+function myFunction(): void {
   console.log("This is my warning message");
 }
 myFunction();

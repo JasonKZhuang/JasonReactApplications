@@ -8,7 +8,7 @@ import './CSS_SASS_Stylesheets.css'
 import styledComponents from 'styled-components';
 
 //Import the stylesheet Module in your component
-import stylesModule from './Mystyle.module.css'; 
+import stylesModule from './MyStyle.module.css'; 
 
 //Using styled-components to style components
 const Box = styledComponents.div`
@@ -30,7 +30,7 @@ const Content = styledComponents.p`
 `;
 
 //Using JavaScript Object to style HTML element
-const myJsObjectstyle = {
+const myJsObjectStyle = {
     color: "white",
     backgroundColor: "DodgerBlue",
     padding: "10px",
@@ -41,8 +41,8 @@ function StyleInCss() {
     return (
         <div style={{ textAlign: 'center' }}>
             <h3 style={{ color: "red" }}>Hello Style, Using Inline Styling, camelCased Property Names </h3>
-            <h3 style={myJsObjectstyle}>Hello Style, Using JavaScript Object to style HTML element</h3>
-            <h3 className={stylesModule.bigblue}>Hello Style, Using Style Module to style HTML element</h3>
+            <h3 style={myJsObjectStyle}>Hello Style, Using JavaScript Object to style HTML element</h3>
+            <h3 className={stylesModule.bigBlue}>Hello Style, Using Style Module to style HTML element</h3>
             <div className="box">
                 <p className="box_content"> Hello Style, Using CSS Stylesheet </p>
             </div>
